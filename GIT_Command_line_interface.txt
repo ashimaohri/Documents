@@ -1,0 +1,66 @@
+GIT Command line interface
+
+> git init
+o This command initialize or creates  the empty git repository basically a .git directory
+> git status
+o Displays paths that have differences between the index file and the current HEAD commit, paths that have differences between the working tree and the index file, and paths in the working tree
+> git clone “URL to clone”
+o Clones a repository into a newly created directory, creates remote-tracking branches for each branch in the cloned repository (visible using git branch -r), and creates and checks out an initial branch that is forked from the cloned repository’s currently active branch.
+* Example :  git clone https://github.com/ashimaohri/Parse-SDK-iOS-OSX.git  This will clone the remote repository master to local directory
+> git fetch 
+o Fetch branches and/or tags (collectively, "refs") from one or more other repositories, along with the objects necessary to complete their histories. 
+* Example :  git fetch origin develop:develop  This will fetch the remote branch develop to the local branch develop
+> git add 
+o Git add will local modified/created/updated file to repository. 
+* Example:  git add FILENAME this will add the FILENAME changes to the local repository.
+* Example:  git add --all This will add all the files changed to  the local repository
+> git commit
+o Stores the current contents of the index in a new commit along with a log message from the user describing the changes. 
+* Example:  git commit –m “Changes for Bug Fix” this will add the comments for changes we made to the local repository. 
+> git push
+o This command will push the modified/updated/created files/contents to the remote repository. After this command Local and remote repositories are synchronized. 
+* Example:  git push
+
+> git branch “Branch Name”
+o This command will create a new branch in the local repository
+* Example:  git branch Deals (This will create the Deals Branch)
+> git checkout “Branch Name”
+o This command will switch to the created branch
+* Example:  git checkout Deals (This will switch to  the Deals Branch)
+> git checkout  -b “Branch Name”
+o This command is shorthand for above two commands. The command will create a branch and switch to the created branch
+* Example:  git checkout –b Deals (This will create deals switch to  the Deals Branch)
+> git branch –D “Branch Name”
+o This command will delete branch from the local repository
+* Example:  git branch -D Deals (This will delete the Deals Branch from local repository)
+> git branch 
+o This command will list local branches from local repository
+* Example:  git branch  (This will list all  Branches from local repository including master)
+> git branch -r
+o This command will list remote branches from remote repository
+* Example:  git branch -r  (This will list all  Branches from remote repository including master)
+> git push origin “Branch Name”
+o This command will push Local branch from local to the Remote repository
+* Example:  git push origin Deals (This will push the Deals Branch from local repository to remote repository)
+> git push origin :“Branch Name”
+o This command will delete branch from the Remote repository
+* Example:  git push origin  :Deals (This will delete the Deals Branch from local repository)
+
+> git remote add origin “URL”
+o This command will add local repository to the remote branch from the Remote repository
+* Example:  git remote add  :Deals (This will delete the Deals Branch from local repository
+
+
+
+
+To merge changes from your branch to the master
+* The branch we want to merge make sure we have commit our change using git commit as below
+* Git commit –m “Comment”   , After switch to the branch where we want changes to be merged as below
+* git checkout master
+* git merge “Name of branch” from where changes needs to be picked up Could be deals ”
+* git push  if changes needs to be updated at remote as well
+
+
+Git Ignore:
+
+touch .gitignore  (This will create git ignore file)
